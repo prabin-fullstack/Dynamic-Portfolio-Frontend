@@ -16,7 +16,7 @@ const contactLinks = [
   { label: 'Kerala, India',      href: '#' },
   { label: 'Resume / CV',        href: '#' },
   { label: 'Hire me',            href: '#contact' },
-  { label: 'Admin',            href: 'http://127.0.0.1:8000/admin/' },
+  { label: 'Admin',            href: 'https://dynamic-portfolio-wjuv.onrender.com/admin/' },
 ]
 
 const ChevronIcon = () => (
