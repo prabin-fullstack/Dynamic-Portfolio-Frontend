@@ -1,0 +1,359 @@
+/* ── Section ── */
+.contact-section {
+  background: #0a0000;
+  padding: 6rem 5vw;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+}
+
+.contact-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Eyebrow ── */
+.contact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(220, 38, 38, 0.35);
+  color: #fca5a5;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 1rem;
+  border-radius: 30px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.contact-eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #ef4444;
+  border-radius: 50%;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* ── Heading ── */
+.contact-heading {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+  line-height: 1;
+}
+
+.contact-subheading {
+  font-size: 0.9rem;
+  color: #52525b;
+  margin: 0 0 3rem;
+  max-width: 440px;
+  line-height: 1.6;
+}
+
+/* ── Layout ── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ── Info panel ── */
+.contact-info {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  opacity: 0;
+  animation: cardIn 0.5s ease forwards;
+}
+
+.contact-info::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: #dc2626;
+}
+
+.info-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #52525b;
+  margin-bottom: 0.5rem;
+}
+
+.info-value {
+  font-size: 0.88rem;
+  color: #d4d4d8;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: block;
+}
+a.info-value:hover { color: #fca5a5; }
+
+.info-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ── Social buttons ── */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.social-btn:hover {
+  background: rgba(220, 38, 38, 0.1);
+  border-color: rgba(220, 38, 38, 0.3);
+  color: #fca5a5;
+}
+
+/* ── Availability badge ── */
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: rgba(34, 197, 94, 0.07);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  font-size: 0.78rem;
+  color: #86efac;
+  font-weight: 500;
+}
+
+.availability-dot {
+  width: 7px;
+  height: 7px;
+  background: #22c55e;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.75); }
+}
+
+/* ── Form panel ── */
+.contact-form-panel {
+  background: rgba(255, 255, 255, 0.015);
+  padding: 2.5rem 2rem;
+  opacity: 0;
+  animation: cardIn 0.5s ease 0.1s forwards;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group.full { grid-column: 1 / -1; }
+
+.form-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #52525b;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 6px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.85rem;
+  color: #f4f4f5;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+.form-input::placeholder,
+.form-textarea::placeholder { color: #3f3f46; }
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: rgba(220, 38, 38, 0.4);
+  background: rgba(220, 38, 38, 0.03);
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2352525b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+.form-select option { background: #1c0000; color: #f4f4f5; }
+
+.form-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* ── Submit row ── */
+.form-submit {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.submit-note {
+  font-size: 0.75rem;
+  color: #3f3f46;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  background: #dc2626;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, opacity 0.2s;
+}
+.submit-btn svg { width: 16px; height: 16px; }
+.submit-btn:hover:not(:disabled) { background: #b91c1c; }
+.submit-btn:active { transform: scale(0.98); }
+.submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+/* ── Success message ── */
+.success-msg {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  background: rgba(34, 197, 94, 0.07);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  font-size: 0.88rem;
+  color: #86efac;
+  font-weight: 500;
+  animation: cardIn 0.4s ease forwards;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .contact-section      { padding: 4rem 1.25rem; }
+  .contact-layout       { grid-template-columns: 1fr; border-radius: 10px; }
+  .contact-info         { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .contact-heading      { margin-bottom: 0.5rem; }
+  .form-grid            { grid-template-columns: 1fr; }
+  .form-submit          { flex-direction: column; align-items: flex-start; }
+  .submit-btn           { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .contact-form-panel { padding: 1.5rem 1.25rem; }
+  .contact-info       { padding: 1.5rem 1.25rem; }
+}
+
+/* ── Toast notifications ── */
+.form-toast {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  animation: cardIn 0.4s ease forwards;
+}
+
+.form-toast svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.form-toast--success {
+  background: rgba(34, 197, 94, 0.07);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  color: #86efac;
+}
+
+.form-toast--error {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.25);
+  color: #fca5a5;
+}
