@@ -21,7 +21,7 @@ function ProjectCard({ projects }) {
               {project.image && (
                 <div className="project-image-wrapper">
                   <img
-                    src={`http://127.0.0.1:8000${project.image}`}
+                    src={`https://dynamic-portfolio-wjuv.onrender.com${project.image}`}
                     alt={project.title}
                     className="project-image"
                     onError={() => console.log('Image failed:', project.image)}
