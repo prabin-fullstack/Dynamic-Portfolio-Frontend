@@ -21,10 +21,12 @@ function ProjectCard({ projects }) {
               {project.image && (
                 <div className="project-image-wrapper">
                   <img
-                    src={`https://dynamic-portfolio-wjuv.onrender.com${project.image}`}
+                    src={project.image}
                     alt={project.title}
                     className="project-image"
-                    onError={() => console.log('Image failed:', project.image)}
+                    onError={(e) => {
+  e.target.style.display = "none";
+}}
                   />
                   <div className="project-overlay">
                     <div className="project-links">
